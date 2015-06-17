@@ -434,6 +434,12 @@ class Content_Score_Report
     $this->client = new Google_Client();
     $this->client->setApplicationName( $this->config['app_name'] );
 
+    if ( !empty($this->config['curl_ssl_verify_peer']) ) {
+      $io = $this->client->getIo();
+      $io->setOptions($this->config['curl_ssl_verify_peer']);
+      $this->client->setIo($io);
+    }
+
     if ( $this->config['app_type'] == 'service' ) {
       $this->client->setAssertionCredentials(
         new Google_Auth_AssertionCredentials(
