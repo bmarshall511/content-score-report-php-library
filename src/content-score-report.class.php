@@ -8,7 +8,7 @@
  *
  * @author Ben Marshall <me@benmarshall.me>
  * @version 2.0
- * @link https://github.com/bmarshall511/content-score-report-library
+ * @link https://github.com/bmarshall511/content-score-report-php-library
  * @since Class available since Release 1.0
  */
 
