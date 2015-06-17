@@ -97,6 +97,13 @@ class Content_Score_Report
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+    if ( !empty($this->config['curl_options']) ) {
+      foreach ($this->config['curl_options'] as $key => $value) {
+        url_setopt($ch, $key, $value);
+      }
+    }
+
     $response = curl_exec($ch);
 
     // Close the cURL resource, and free system resources
@@ -434,9 +441,9 @@ class Content_Score_Report
     $this->client = new Google_Client();
     $this->client->setApplicationName( $this->config['app_name'] );
 
-    if ( !empty($this->config['curl_ssl_verify_peer']) ) {
+    if ( !empty($this->config['curl_options']) ) {
       $io = $this->client->getIo();
-      $io->setOptions($this->config['curl_ssl_verify_peer']);
+      $io->setOptions($this->config['curl_options']);
       $this->client->setIo($io);
     }
 
