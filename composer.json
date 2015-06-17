@@ -1,0 +1,13 @@
+{
+    "name": "content-score-report-library",
+    "type": "library",
+    "version": "2.0",
+    "description": "A PHP library that uses data from Google Analytics & MailChimp to calculate content acquisition and retention scores.",
+    "homepage": "https://github.com/bmarshall511/content-score-report-library",
+    "license": "MIT",
+    "authors": [{"name": "Ben Marshall", "email": "me@benmarshall.me", "homepage": "http://www.benmarshall.me", "role": "Developer"}],
+    "require": {
+        "php": ">=5.2.0",
+        "google/apiclient": "1.0.*@beta"
+    }
+}
